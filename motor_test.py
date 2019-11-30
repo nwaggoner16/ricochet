@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time
+
 class L298n:
 	def __init__(self, ena_pin, in1_pin, in2_pin, in3_pin, in4_pin, speed, run_time):
 		self.ena_pin = ena_pin
