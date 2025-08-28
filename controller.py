@@ -1,4 +1,3 @@
-#!/usr/bin/python
 """
 We are using a small REST server to control our robot.
 """
@@ -7,9 +6,9 @@ from flask_socketio import SocketIO, emit
 from flask_cors import CORS
 import math
 from multiprocessing import Process, Queue
-from adafruit_motorkit import MotorKit
+#from adafruit_motorkit import MotorKit
 import time
-kit = MotorKit()
+#kit = MotorKit()
 
 _debug = False
 
@@ -62,7 +61,7 @@ def control(message):
     if "left" in data.keys():
         x = data["left"][1]
         #y = data["right"][0]
-        kit.motor1.throttle=x
+        #kit.motor1.throttle=x
         print(x)
         
 	#kit.motor2.throttle(y)
@@ -71,7 +70,7 @@ def control(message):
     elif "right" in data.keys():
         x = data["right"][0]
         y = data["right"][1]
-        kit.motor2.throttle=y
+        #kit.motor2.throttle=y
         print(y)        
 
         #if _debug: print "[Server] Right: ",x,",",y
